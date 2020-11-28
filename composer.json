@@ -35,10 +35,5 @@
     "test": "Run application tests. (defaults to local tests)",
     "test:local": "Run application tests with local configuration.",
     "test:ci": "Run application tests, provide configuration options as needed."
-  },
-  "extra": {
-    "branch-alias": {
-      "dev-main": "1.x-dev"
-    }
   }
 }
