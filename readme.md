@@ -1,7 +1,7 @@
 # Generic PSR-15 Middleware & Handlers
 
 ![PHP from Packagist](https://img.shields.io/packagist/php-v/dakujem/generic-middleware)
-[![Tests](https://github.com/dakujem/generic-middleware/actions/workflows/php-test.yml/badge.svg)](https://github.com/dakujem/generic-middleware/actions/workflows/php-test.yml)
+[![Test Suite](https://github.com/dakujem/generic-middleware/actions/workflows/php-test.yml/badge.svg)](https://github.com/dakujem/generic-middleware/actions/workflows/php-test.yml)
 [![Coverage Status](https://coveralls.io/repos/github/dakujem/generic-middleware/badge.svg?branch=main)](https://coveralls.io/github/dakujem/generic-middleware?branch=main)
 
 > 💿 `composer require dakujem/generic-middleware`
