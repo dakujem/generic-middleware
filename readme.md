@@ -12,7 +12,18 @@
 The [`GenericMiddleware`] is a general purpose middleware that turns a callable into a PSR-15 implementation.
 It accepts any callable with signature `fn(Request,Handler):Response`.
 
-It can be used for convenient inline middleware implementation:
+>
+> Note that I'm using aliases `Request`, `Response` and `Handler` for their respective PSR interface names for brevity.
+>
+> Consider the following `use` statements in use:
+> ```php
+> use Psr\Http\Message\ServerRequestInterface  as Request;
+> use Psr\Http\Message\ResponseInterface       as Response;
+> use Psr\Http\Server\RequestHandlerInterface  as Handler;
+> ```
+> 
+
+`GenericMiddleware` can be used for convenient inline middleware implementation:
 ```php
 $app->add(new GenericMiddleware(function(Request $request, Handler $next): Response {
     $request = $request->withAttribute('foo', 42);
@@ -35,19 +46,6 @@ $kernel = new GenericHandler(
 );
 $dispatcher = new MiddlewareDispatcher($kernel);
 ```
-
-
->
-> Note that I'm using aliases instead of full interface names in this documentation for brevity.
->
-> Here are the full interface names:
->
-> | Alias | Full class name |
-> |:------|:----------------|
-> | `Request` | `Psr\Http\Message\ServerRequestInterface` |
-> | `Response` | `Psr\Http\Message\ResponseInterface` |
-> | `Handler` | `Psr\Http\Server\RequestHandlerInterface` |
->
 
 
 ## Testing
