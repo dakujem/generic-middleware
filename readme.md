@@ -6,11 +6,9 @@
 
 > 💿 `composer require dakujem/generic-middleware`
 
-
-## `GenericMiddleware`
-
-The [`GenericMiddleware`] is a general purpose middleware that turns a callable into a PSR-15 implementation.
-It accepts any callable with signature `fn(Request,Handler):Response`.
+Contains a couple of classes:
+- `GenericMiddleware`, an implementation of `Psr\Http\Server\MiddlewareInterface` 
+- `GenericHandler`, an implementation of `Psr\Http\Server\RequestHandlerInterface` 
 
 >
 > Note that I'm using aliases `Request`, `Response` and `Handler` for their respective PSR interface names for brevity.
@@ -21,9 +19,15 @@ It accepts any callable with signature `fn(Request,Handler):Response`.
 > use Psr\Http\Message\ResponseInterface       as Response;
 > use Psr\Http\Server\RequestHandlerInterface  as Handler;
 > ```
-> 
+>
 
-`GenericMiddleware` can be used for convenient inline middleware implementation:
+
+## `GenericMiddleware`
+
+The [`GenericMiddleware`] is a general purpose middleware that turns a callable into a PSR-15 implementation.
+It accepts any callable with signature `fn(Request,Handler):Response`.
+
+It can be used for convenient inline middleware implementation:
 ```php
 $app->add(new GenericMiddleware(function(Request $request, Handler $next): Response {
     $request = $request->withAttribute('foo', 42);
